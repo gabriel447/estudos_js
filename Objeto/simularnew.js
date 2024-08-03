@@ -10,7 +10,7 @@ const aula2 = new Aula("Ate Breve!", 456)
 
 console.log(aula1, aula2)
 
-//funcao pra simular o new
+//funcao pra simular o ne
 //operador spread rest ...params
 
 function novo(f, ...params) {
