@@ -1,22 +1,22 @@
 const fs = require('fs')
+const path = require('path')
 
 function getData(arquivo) {
-    return new Promise((resolve, reject) => {
-      fs.readFile(`/Users/fullstackgabe/Documents/htdocs/estudos_js/Advanced/${arquivo}`, 'utf8', (err, data) => {
-        if (err) {
-          const errorMessage = `Erro ao ler o arquivo "${arquivo}": ${err.message}`
-          return reject(errorMessage)
-        } else {
-          return resolve(data)
-        }
-      })
+  return new Promise((resolve, reject) => {
+    const filePath = path.join(__dirname, arquivo)
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error('Erro ao ler o arquivo:', err)
+        return reject(err)
+      } else {
+        return resolve(data)
+      }
     })
-  }
+  })
+}
 
 getData('dados.txt')
   .then(data => console.log(data))
   .catch(error => {
-    console.error(error)
-})
-
-  
+    console.error('Erro:', error)
+  });
