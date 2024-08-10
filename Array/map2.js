@@ -1,14 +1,14 @@
 const carrinho = [
-    `{ "nome": "Borracha", "preco": 3.45 } `,
-    `{ "nome": "Caderno", "preco": 13.90 } `,
-    `{ "nome": "Kit de Lapis", "preco": 41.22 } `,
-    `{ "nome": "Caneta", "preco": 7.50 } `,
-]
+  `{ "nome": "Borracha", "preco": 3.45 } `,
+  `{ "nome": "Caderno", "preco": 13.90 } `,
+  `{ "nome": "Kit de Lapis", "preco": 41.22 } `,
+  `{ "nome": "Caneta", "preco": 7.50 } `,
+];
 
 //transformando array em objeto pra acessar o preco
-const paraObjeto = json => JSON.parse(json)
-const apenasPreco = produto => produto.preco
+const paraObjeto = (json) => JSON.parse(json);
+const apenasPreco = (produto) => produto.preco;
 
-const resultado = carrinho.map(paraObjeto).map(apenasPreco)
+const resultado = carrinho.map(paraObjeto).map(apenasPreco);
 
-console.log(resultado)
+console.log(resultado);

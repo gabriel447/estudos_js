@@ -1,8 +1,8 @@
 class Animal {}
 class Cachorro extends Animal {
   latir() {
-      return 'Au au!'
+    return "Au au!";
   }
 }
 
-console.log(new Cachorro().latir())
+console.log(new Cachorro().latir());

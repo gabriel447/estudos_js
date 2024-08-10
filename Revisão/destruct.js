@@ -1,7 +1,7 @@
 const dev = {
-    'nome': 'Gabriel',
-    'idade': '30',
-    'stack': 'fullstack'
+  nome: "Gabriel",
+  idade: "30",
+  stack: "fullstack",
 };
 
 //acessando atributos de objeto
