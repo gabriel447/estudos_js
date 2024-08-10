@@ -8,6 +8,6 @@ async function fetchData(endpoint) {
     }
   }
   
-  fetchData('spells').then(data => {
+  fetchData('characters').then(data => {
       data.forEach(item => console.log(item.name))
   })

@@ -1,9 +1,15 @@
-//testando consumo básico sem try/catch
 async function getData(endpoint) {
-    const url = `https://rickandmortyapi.com/api/${endpoint}`
-    const response = await fetch(url)
-    const json = await response.json()
-    console.log(json)
+    try {
+        const response = await fetch(`https://rickandmortyapi.com/api/${endpoint}`)
+        const json = await response.json()
+        return json
+    } catch (e) {
+        console.error(e)
+    }
 }
 
-getData('character')
+getData('character').then(json => {
+    json.results.forEach(character => {
+        console.log(character.name)
+    })
+})
