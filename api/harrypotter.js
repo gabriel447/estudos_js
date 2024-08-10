@@ -1,13 +1,15 @@
-async function fetchData(endpoint) {
+async function getData(endpoint) {
     try {
-      const response = await fetch(`https://hp-api.onrender.com/api/${endpoint}`)
-      const data = await response.json()
-      return data
-    } catch (error) {
-      console.error('Erro ao buscar dados:', error)
+        const response = await fetch(`https://hp-api.onrender.com/api/${endpoint}`)
+        const data = await response.json()
+        return data
+    } catch (e) {
+        console.error(e)
     }
-  }
+}
   
-  fetchData('characters').then(data => {
-      data.forEach(item => console.log(item.name))
-  })
+getData('characters').then(data => {
+    data.forEach(
+      element => console.log(element.name)
+    )
+})
